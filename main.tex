@@ -16,20 +16,24 @@
 
 \subsection{Reference:} \cite[\S 4.10]{bos18}.
 
-\subsection{Data:}
+\subsection{Setting:}
 \begin{enumerate}
     \item Let $K$ be a field and fix a separable closure $K_{s}$.
+    \item Let $n\in \N$ be a non-zero natural number.
     \item Let $G:=\Gal(K_{s}/K)$ be the absolute Galois group.
     \item Let $A$ be an abelian group endowed with the discrete topology and a continuous action of $G$ on $A$ via group automorphisms, which we will denote by $\sigma \cdot a=:\sigma(a)$.
-    \item Continuity ensures that for all $a\in A$ we have
-	\begin{center}
-	    \begin{tikzcd}
-		G(A/a):=\{ \sigma \in G\mid \sigma(a)=a\}\arrow[open]{r} & G.
-	    \end{tikzcd}
-	\end{center}
+    \item For each intermediate field $K\subseteq L\subseteq K_{s}$ we denote
+	\[ A_{L}:=\{ a\in A\mid \sigma(a)=a \text{ for all }\sigma\in \Gal(K_{s}/L)\}. \]
+    \item Let $\wp\colon A\to A$ be a $G$-equivariant surjective homomorphism whose kernel, denoted $\mu_{n}$, is a cyclic subgroup of order $n$ of $A_{K}$.
 \end{enumerate}
 
-It follows from $(4)$ that $G(A/a)$ is also closed in $G$, hence corresponds to an intermediate field $K\subseteq K_{s}^{G(A/a)}\subseteq K_{s}$ \cite[4.2/3]{bos18}, let's denote it $K(a)$.
+Continuity of the action of $G$ on $A$ ensures that for all $a\in A$ we have
+\begin{center}
+    \begin{tikzcd}
+	G(A/a):=\{ \sigma \in G\mid \sigma(a)=a\}\arrow[open]{r} & G.
+    \end{tikzcd}
+\end{center}
+Hence $G(A/a)$ is also closed in $G$ and corresponds to an intermediate field $K\subseteq K_{s}^{G(A/a)}\subseteq K_{s}$ \cite[4.2/3]{bos18}, let's denote it $K(a)$.
 
 \begin{lm}
     The intermediate field $K(a)$ is a finite extension of $K$.
@@ -50,10 +54,16 @@ It follows from $(4)$ that $G(A/a)$ is also closed in $G$, hence corresponds to 
     \end{proof}
 \end{lm}
 
+More generally, given a subset $\Delta\subseteq A$ we may consider the subgroup
+\[ G(A/\Delta):=\{\sigma\in G\mid \sigma(a)=a \text{ for all }a\in \Delta\}=\Cap_{a\in \Delta}G(A/a), \]
+which is then a closed subgroup but not necessarily an open subgroup.
+In any case we obtain an intermediate field $K\subseteq K_{s}^{G(A/\Delta)}\subseteq K_{s}$, which we will denote by $K(\Delta)$.
+
+If $L/K$ is Galois, then the action of $G$ on $A$ restricts to an action of 
+
 \newpage
 \bibliographystyle{alpha}
 \bibliography{main}
 \vfill
 
 \end{document}
-
