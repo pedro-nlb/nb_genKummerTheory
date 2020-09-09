@@ -1,17 +1,54 @@
 \documentclass[12pt]{amsart}
 
 \input{preamble}
+\renewcommand{\thesubsection}{\arabic{subsection}}
 
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Gal}{Gal}
 \newcommand{\ot}{\otimes}
 \newcommand{\op}{\oplus}
+\newcommand{\id}{\mathrm{id}}
 
 \begin{document}
 
+\title{Short notes on Generalized Kummer Theory}
 \maketitle
 
-Some small discussion about a very particular topic.
-References included in the .bib file by default are \cite{har77} and \cite{stacks}.
+\subsection{Reference:} \cite[\S 4.10]{bos18}.
+
+\subsection{Data:}
+\begin{enumerate}
+    \item Let $K$ be a field and fix a separable closure $K_{s}$.
+    \item Let $G:=\Gal(K_{s}/K)$ be the absolute Galois group.
+    \item Let $A$ be an abelian group endowed with the discrete topology and a continuous action of $G$ on $A$ via group automorphisms, which we will denote by $\sigma \cdot a=:\sigma(a)$.
+    \item Continuity ensures that for all $a\in A$ we have
+	\begin{center}
+	    \begin{tikzcd}
+		G(A/a):=\{ \sigma \in G\mid \sigma(a)=a\}\arrow[open]{r} & G.
+	    \end{tikzcd}
+	\end{center}
+\end{enumerate}
+
+It follows from $(4)$ that $G(A/a)$ is also closed in $G$, hence corresponds to an intermediate field $K\subseteq K_{s}^{G(A/a)}\subseteq K_{s}$ \cite[4.2/3]{bos18}, let's denote it $K(a)$.
+
+\begin{lm}
+    The intermediate field $K(a)$ is a finite extension of $K$.
+    \begin{proof}
+	Let $\{ L_{i} \}_{i\in I}$ be the direct system of all subfields of $K_{s}$ which are finite field extensions of $K$.
+	For each $i\in I$, let us denote by
+	\[ f_{i}\colon G\to \Gal(L_{i}/K) \]
+	the restriction morphism.
+	The topology in $G$ is the coarsest one making all the $f_{i}$ continuous.
+	Since each $\Gal(L_{i}/K)$ is a finite group, endowed with the discrete topology, it follows that the topology on $G$ should be the smallest topology in which all fibres of the morphisms $f_{i}$ are open.
+	But the fibres of all the $f_{i}$ already form a basis for some topology on $G$, so the topology on $G$ can be explicitly described in terms of this basis.
+
+	Since $G(A/a)$ is open and $\id_{K_{s}}\in G(A/a)$, there is some $i\in I$ such that
+	\[ f_{i}^{-1}(f_{i}(\id_{K_{s}}))=\Gal(K_{s}/L_{i})\subseteq G(A/a). \]
+	From Galois correspondence we deduce now that
+	\[ K\subseteq K(a)\subseteq L_{i}, \]
+	hence $K(a)$ is also finite over $K$.
+    \end{proof}
+\end{lm}
 
 \newpage
 \bibliographystyle{alpha}
