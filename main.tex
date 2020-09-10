@@ -4,6 +4,7 @@
 
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Aut}{Aut}
 \newcommand{\ot}{\otimes}
 \newcommand{\op}{\oplus}
 \newcommand{\id}{\mathrm{id}}
@@ -102,6 +103,30 @@ So if $\sigma(a)\in \wp^{-1}(C)$, then
 \[ \wp(\sigma(a))=\wp(a)\in C \]
 and $a\in \wp^{-1}(C)$ as well, showing that the restriction of $\sigma$ is also surjective.
 Hence $\sigma$ restricts to a bijection $\wp^{-1}(C)\to \wp^{-1}(C)$.
+We obtain in this manner a group homomorphism
+\[ G\to \Aut(\wp^{-1}(C)). \]
+The kernel of this group homomorphism is $G(A/\wp^{-1}(C))$ by definition.
+It is therefore a normal subgroup of $G$, which means in turn that $K(\wp^{-1}(C))/K$ is a Galois extension with Galois group $G_{C}\cong G/G(A/\wp^{-1}(C))$.
+
+We define now a pairing
+\begin{align*}
+    G_{C}\times C &\longrightarrow \mu_{n} \\
+    (\sigma,c) &\longmapsto \sigma(a)-a, \text{ for }a\in \wp^{-1}(c).
+\end{align*}
+To check that it is well-defined, pick some other $a'\in \wp^{-1}(c)$.
+This elemnt will differ from the previous $a$ by some $b\in \mu_{n}$, hence
+\[ \sigma(a')-a'=\sigma(a)+\sigma(b)-a-b=\sigma(a)-a. \]
+All good then.
+Assume from now on that $\wp(A_{K})\subseteq C$.
+We factor then the previous pairing into the pairing that we are interested in:
+\begin{align*}
+    \langle \cdot,\cdot\rangle \colon G_{C}\times C/\wp(A_{K}) &\longrightarrow \mu_{n} \\
+    (\sigma,\bar{c}) & \longmapsto \sigma(a)-a, \text{ for }a\in \wp^{-1}(c).
+\end{align*}
+
+\begin{lm}
+    The pairing $\langle \cdot,\cdot\rangle$ is non-degenerate.
+\end{lm}
 
 \newpage
 \bibliographystyle{alpha}
