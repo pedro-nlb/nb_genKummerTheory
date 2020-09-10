@@ -1,7 +1,6 @@
 \documentclass[12pt]{amsart}
 
 \input{preamble}
-\renewcommand{\thesubsection}{\arabic{subsection}}
 
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Gal}{Gal}
@@ -14,13 +13,16 @@
 \title{Short notes on Generalized Kummer Theory}
 \maketitle
 
-\subsection{Reference:} \cite[\S 4.10]{bos18}.
+\section{Preliminaries}
 
-\subsection{Goal:} given a field $K$ and a non-zero natural number $n$, characterize all Galois extensions of $K$ whose Galois group is abelian with exponent $d\mid n$.
+\subsection*{Goal:} given a field $K$ and a non-zero natural number $n$, characterize all Galois extensions of $K$ whose Galois group is abelian with exponent $d\mid n$.
 
-\subsection{Language:} by \textit{abelian} extension we mean a Galois extension $L/K$ with abelian Galois group; by \textit{cyclic} extension we mean a Galois extension $L/K$ with cyclic Galois group.
+\subsection*{Language:} by \textit{abelian} extension we mean a Galois extension $L/K$ with abelian Galois group; by \textit{cyclic} extension we mean a Galois extension $L/K$ with cyclic Galois group.
 
-\subsection{Setting:}
+\subsection*{Reference:} \cite[\S 4.10]{bos18}.
+
+\section{Setting}
+
 \begin{enumerate}
     \item Let $K$ be a field and fix a separable closure $K_{s}$.
     \item Let $n\in \N$ be a non-zero natural number.
@@ -83,6 +85,23 @@ We are ready now to state the main assumption on which we will rely:
     For every cyclic extension $L/K$ whose degree divides $n$ we have
     \[ H^{1}(\Gal(L/K),A_{L})=0. \]
 \end{axiom}
+
+\section{The pairing associated to a subgroup}
+
+Let $C\subseteq A_{K}$ be a subgroup and consider $\wp^{-1}(C)\subseteq A$.
+By $G$-equivariance of $\wp$ and our assumption that $C\subseteq A_{K}$, any $\sigma\in G$ restricts to a homomorphism $\sigma\colon \wp^{-1}(C)\to \wp^{-1}(C)$.
+If $\sigma(a)=0$ for $a\in \wp^{-1}(C)$, then
+\[ \wp(\sigma(a))=\sigma(\wp(a))=\wp(a)=0, \]
+because $\wp(a)\in C\subseteq A_{K}$.
+Therefore $a\in \mu_{n}\subseteq A_{K}$, and this implies in turn that $\sigma(a)=a=0$.
+So the restriction of $\sigma$ is an injective homomorphism $\wp^{-1}(C)\to \wp^{-1}(C)$.
+For $a\in \wp^{-1}(C)$ we have
+\[ \sigma(a)-a\in \mu_{n} \]
+again by $G$-equivariance of $\wp$ and our assumption that $C\subseteq A_{K}$.
+So if $\sigma(a)\in \wp^{-1}(C)$, then
+\[ \wp(\sigma(a))=\wp(a)\in C \]
+and $a\in \wp^{-1}(C)$ as well, showing that the restriction of $\sigma$ is also surjective.
+Hence $\sigma$ restricts to a bijection $\wp^{-1}(C)\to \wp^{-1}(C)$.
 
 \newpage
 \bibliographystyle{alpha}
