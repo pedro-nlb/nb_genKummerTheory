@@ -16,6 +16,10 @@
 
 \subsection{Reference:} \cite[\S 4.10]{bos18}.
 
+\subsection{Goal:} given a field $K$ and a non-zero natural number $n$, characterize all Galois extensions of $K$ whose Galois group is abelian with exponent $d\mid n$.
+
+\subsection{Language:} by \textit{abelian} extension we mean a Galois extension $L/K$ with abelian Galois group; by \textit{cyclic} extension we mean a Galois extension $L/K$ with cyclic Galois group.
+
 \subsection{Setting:}
 \begin{enumerate}
     \item Let $K$ be a field and fix a separable closure $K_{s}$.
@@ -55,11 +59,30 @@ Hence $G(A/a)$ is also closed in $G$ and corresponds to an intermediate field $K
 \end{lm}
 
 More generally, given a subset $\Delta\subseteq A$ we may consider the subgroup
-\[ G(A/\Delta):=\{\sigma\in G\mid \sigma(a)=a \text{ for all }a\in \Delta\}=\Cap_{a\in \Delta}G(A/a), \]
+\[ G(A/\Delta):=\{\sigma\in G\mid \sigma(a)=a \text{ for all }a\in \Delta\}=\cap_{a\in \Delta}G(A/a), \]
 which is then a closed subgroup but not necessarily an open subgroup.
 In any case we obtain an intermediate field $K\subseteq K_{s}^{G(A/\Delta)}\subseteq K_{s}$, which we will denote by $K(\Delta)$.
 
-If $L/K$ is Galois, then the action of $G$ on $A$ restricts to an action of 
+If $L/K$ is Galois, then the action of $G$ on $A$ restricts to an action of $G$ on $A_{L}$.
+Indeed, let $\tau\in G$, $\sigma\in \Gal(K_{s}/L)$ and $a\in A_{L}$.
+Since $\Gal(K_{s}/L)\trianglelefteq G$, there is some $\sigma'\in \Gal(K_{s}/L)$ such that
+\[ \sigma\tau(a)=\tau\sigma'(a)=\tau(a), \]
+hence $\tau(a)\in A_{L}$.
+And by definition $\Gal(K_{s}/L)$ acts trivially on $A_{L}$, so we get an induced action of $G/\Gal(K_{s}/L)$ on $A_{L}$.
+Using again that $L/K$ is Galois, we may identify this quotient group with $\Gal(L/K)$, obtaining an action of $\Gal(L/K)$ on $A_{L}$.
+We can then talk about the cohomology group $H^{1}(\Gal(L/K),A_{L})$.
+A function $f\colon \Gal(L/K)\to A_{L}$ is called a \textit{crossed homomorphism} if for all $\sigma,\tau\in \Gal(L/K)$ we have
+\[ f(\sigma\tau)=f(\sigma)+\sigma (f(\tau)). \]
+A function $f\colon \Gal(L/K)\to A_{L}$ is called a \textit{principal crossed homomorphism} if there exists some $a\in A_{L}$ such that for all $\sigma \in \Gal(L/K)$ we have
+\[ f(\sigma)=\sigma(a)-a. \]
+Principal crossed homomorphisms form a subgroup of the group of crossed homomorphisms, and the quotient group is then our first cohomology group $H^{1}(\Gal(L/K),A_{L})$.
+
+We are ready now to state the main assumption on which we will rely:
+
+\begin{axiom}
+    For every cyclic extension $L/K$ whose degree divides $n$ we have
+    \[ H^{1}(\Gal(L/K),A_{L})=0. \]
+\end{axiom}
 
 \newpage
 \bibliographystyle{alpha}
