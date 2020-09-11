@@ -126,7 +126,22 @@ We factor then the previous pairing into the pairing that we are interested in:
 
 \begin{lm}
     The pairing $\langle \cdot,\cdot\rangle$ is non-degenerate.
+    \begin{proof}
+	We have to show that the induced morphisms
+	\[ \varphi_{1}\colon G_{C}\to \Hom(C/\wp(A_{K}),\mu_{n}) \quad\text{and}\quad \varphi_{2}\colon C/\wp(A_{K})\to \Hom(G_{C},\mu_{n}) \]
+	are injective.
+
+	Suppose that $\sigma\in G_{C}$ is such that $\langle \sigma,\bar{c}\rangle=0$ for all $\bar{c}\in C/\wp(A_{K})$.
+	In particular, if $\sigma'\in G$ is a preimage of $\sigma$, then $\sigma(a)=a$ for all $a\in \wp^{-1}(C)$.
+	This means precisely that $\sigma'\in G(A/\wp^{-1}(C))$, hence $\sigma=1_{G_{C}}$.
+
+	Suppose now that $c\in C$ is such that $\langle \sigma, \bar{c}\rangle=0$ for all $\sigma\in G_{C}$.
+	We want to show that $c\in \wp(A_{K})$, so let $a\in \wp^{-1}(c)$.
+	For all $\sigma'\in G$ we have $\sigma'(a)=a$, which means that $a\in A_{K}$ and therefore $\bar{c}=0$.
+
+    \end{proof}
 \end{lm}
+
 
 \newpage
 \bibliographystyle{alpha}
