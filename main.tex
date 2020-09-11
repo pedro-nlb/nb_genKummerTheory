@@ -124,7 +124,7 @@ We factor then the previous pairing into the pairing that we are interested in:
     (\sigma,\bar{c}) & \longmapsto \sigma(a)-a, \text{ for }a\in \wp^{-1}(c).
 \end{align*}
 
-\begin{lm}
+\begin{lm}\label{lm:injectivity}
     The pairing $\langle \cdot,\cdot\rangle$ is non-degenerate.
     \begin{proof}
 	We have to show that the induced morphisms
@@ -138,10 +138,20 @@ We factor then the previous pairing into the pairing that we are interested in:
 	Suppose now that $c\in C$ is such that $\langle \sigma, \bar{c}\rangle=0$ for all $\sigma\in G_{C}$.
 	We want to show that $c\in \wp(A_{K})$, so let $a\in \wp^{-1}(c)$.
 	For all $\sigma'\in G$ we have $\sigma'(a)=a$, which means that $a\in A_{K}$ and therefore $\bar{c}=0$.
-
     \end{proof}
 \end{lm}
 
+\begin{lm}\label{lm:finiteness}
+    $K(\wp^{-1}(C))/K$ is finite if and only if $(C:\wp(A_{K}))$ is finite.
+    \begin{proof}
+	Suppose first that $[K(\wp^{-1}(C)):K]$ is finite.
+	Then its Galois group $G_{C}$ would be finite as well, so $\Hom(G_{C},\mu_{n})$ is finite.
+	But $\varphi_{2}$ is injective by \Cref{lm:injectivity}, so $C/\wp(A_{K})$ must be finite as well.
+
+	Conversely, suppose that $C/\wp(A_{K})$ is finite.
+	Again, this implies that $\Hom(C/\wp(A_{K}),\mu_{n})$ is finite, so injectivity of $\varphi_{1}$ shows that $[K(\wp^{-1}(C)):K]$ is finite as well.
+    \end{proof}
+\end{lm}
 
 \newpage
 \bibliographystyle{alpha}
