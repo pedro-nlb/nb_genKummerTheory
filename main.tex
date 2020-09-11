@@ -124,7 +124,7 @@ We factor then the previous pairing into the pairing that we are interested in:
     (\sigma,\bar{c}) & \longmapsto \sigma(a)-a, \text{ for }a\in \wp^{-1}(c).
 \end{align*}
 
-\begin{lm}\label{lm:injectivity}
+\begin{prop}\label{prop:injectivity}
     The pairing $\langle \cdot,\cdot\rangle$ is non-degenerate.
     \begin{proof}
 	We have to show that the induced morphisms
@@ -139,17 +139,40 @@ We factor then the previous pairing into the pairing that we are interested in:
 	We want to show that $c\in \wp(A_{K})$, so let $a\in \wp^{-1}(c)$.
 	For all $\sigma'\in G$ we have $\sigma'(a)=a$, which means that $a\in A_{K}$ and therefore $\bar{c}=0$.
     \end{proof}
-\end{lm}
+\end{prop}
 
-\begin{lm}\label{lm:finiteness}
+\begin{prop}\label{prop:finiteness}
     $K(\wp^{-1}(C))/K$ is finite if and only if $(C:\wp(A_{K}))$ is finite.
     \begin{proof}
 	Suppose first that $[K(\wp^{-1}(C)):K]$ is finite.
 	Then its Galois group $G_{C}$ would be finite as well, so $\Hom(G_{C},\mu_{n})$ is finite.
-	But $\varphi_{2}$ is injective by \Cref{lm:injectivity}, so $C/\wp(A_{K})$ must be finite as well.
+	But $\varphi_{2}$ is injective by \Cref{prop:injectivity}, so $C/\wp(A_{K})$ must be finite as well.
 
 	Conversely, suppose that $C/\wp(A_{K})$ is finite.
 	Again, this implies that $\Hom(C/\wp(A_{K}),\mu_{n})$ is finite, so injectivity of $\varphi_{1}$ shows that $[K(\wp^{-1}(C)):K]$ is finite as well.
+    \end{proof}
+\end{prop}
+
+\begin{lm}\label{lm:finiteduality}
+    Let $n\in \N$ be a non-zero natural number and let $H$ be a finite abelian group with exponent $d\mid n$.
+    Then there exists an isomorphism $H\cong \Hom(H,\Z/n\Z)$.
+    \begin{proof}
+	By the structure theorem for finitely generated abelian groups it suffices to show the result for $H=\Z/d\Z$.
+	We first reduce the result to the case $d=n$.
+	There is a unique cyclic subgroup $H_{d}\subseteq \Z/n\Z$ of order $d$.
+	Every homomorphism $\Z/d\Z\to \Z/n\Z$ factors then through $H_{d}$, so the canonical map
+	\[ \Hom(\Z/d\Z,H_{d})\hookrightarrow \Hom(\Z/d\Z,\Z/n\Z) \]
+	is an isomorphism.
+	Since $H_{d}\cong \Z/d\Z$, it suffices to show that there is an isomorphism
+	\[ \Z/d\Z\to \Hom(\Z/d\Z,\Z/d\Z), \]
+	i.e.~it suffices to show the case $d=n$.
+
+	In this case we consider the surjective homomorphism
+	\begin{align*}
+	    \Z & \to \Hom(\Z/d\Z,\Z/d\Z) \\
+	    1 & \mapsto \id.
+	\end{align*}
+	Its kernel is $d\Z$, so passing to the quotient yields the desired isomorphism.
     \end{proof}
 \end{lm}
 
