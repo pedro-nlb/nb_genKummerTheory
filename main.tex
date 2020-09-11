@@ -176,6 +176,26 @@ We factor then the previous pairing into the pairing that we are interested in:
     \end{proof}
 \end{lm}
 
+\begin{prop}\label{prop:index}
+    If $K(\wp^{-1}(C))/K$ or $(C:\wp(A_{K}))$ are finite, then $\varphi_{1}$ and $\varphi_{2}$ from \Cref{prop:injectivity} are isomorphisms and
+    \[ [K(\wp^{-1}(C)):K]=(C:\wp(A_{K})). \]
+    \begin{proof}
+	By \Cref{prop:finiteness}, if either of the two is finite, so is the other one.
+	By \Cref{lm:finiteduality} we have isomorphisms
+	\[ C/\wp(A_{K})\cong \Hom(C/\wp(A_{K}),\mu_{n})\quad\text{and}\quad G_{C}\cong \Hom(G_{C},\mu_{n}). \]
+	We have
+	\begin{align*}
+	    [K(\wp^{-1}(C)):K] & = |G_{C}| \\
+	    & \leqslant |\Hom(C/\wp(A_{K}),\mu_{n})| \\
+	    & = |C/\wp(A_{K})| \\
+	    & \leqslant |\Hom(G_{C},\mu_{n}) | \\
+	    & = |G_{C}| \\
+	    & =[K(\wp^{-1}(C)):K].
+	\end{align*}
+	Therefore $[K(\wp^{-1}(C)):K]=(C:\wp(A_{K}))$ and $\varphi_{1}$ and $\varphi_{2}$ are isomorphisms.
+    \end{proof}
+\end{prop}
+
 \newpage
 \bibliographystyle{alpha}
 \bibliography{main}
