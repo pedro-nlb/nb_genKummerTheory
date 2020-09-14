@@ -231,7 +231,37 @@ We factor then the previous pairing into the pairing that we are interested in:
 	\[ \varphi_{1,i}(\tau|_{K(\wp^{-1}(C_{i}))})(\bar{c})=\sigma(a)-a=\varphi_{1,j}(\tau)|_{C_{i}/\wp(A_{K})}(\bar{c}), \]
 	showing commutativity of the diagram and thus finishing the proof of bijectivity of $\varphi_{1}$.
 
-	Let us show next the assertion about $\varphi_{2}$.
+	Before discussing the assertion about $\varphi_{2}$, we claim that every continuous homomorphism $g\colon G_{C}\to \mu_{n}$ comes from some homomorphism $g_{i}\colon G_{C_{i}}\to \mu_{n}$ via the restriction $f_{i}\colon G_{C}\to G_{C_{i}}$.
+	Indeed, let $\xi\in \mu_{n}$ be a generator.
+	Given such $g$ and given some $k\xi\in \mu_{n}$ in the image of $g$, say $k\xi=g(\sigma)$, the preimage $g^{-1}(k\xi)$ is open in $G_{C}$.
+	Since the fibers of the restrictions form a basis for the topology on $G_{C}$, there exists some $i_{k}\in I$ such that $f_{i_{k}}^{-1}f_{i_{k}}(\sigma)\subseteq g^{-1}(g(\sigma))$.
+	Let now $i=\max_{k}\{ i_{k} \}$ and define
+	\begin{align*}
+	    g_{i}\colon G_{C_{i}} & \longrightarrow \mu_{n} \\
+	    \sigma|_{K(\wp^{-1}(C_{i}))} & \longmapsto g(\sigma).
+	\end{align*}
+	If $\sigma|_{K(\wp^{-1}(C_{i}))}=\tau|_{K(\wp^{-1}(C_{i}))}$ and $g(\sigma)=k\xi$, then we have $i_{k}\leqslant i$ and therefore
+	\[ \tau\in f_{i}^{-1}f_{i}(\sigma)\subseteq f_{i_{k}}^{-1}f_{i_{k}}(\sigma)\subseteq g^{-1}g(\sigma), \]
+	showing that $g_{i}$ is well-defined.
+	And by construction $g=g_{i}\circ f_{i}$, proving the claim.
+
+	Moving on to the assertion about $\varphi_{2}$, suppose $g\in \Hom(G_{C},\mu_{n})$ is in the image of $\varphi_{2}$, say $g=\varphi_{2}(\bar{c})$.
+	Then it is continuous, because the formula we used to define it involves only the continuous action of $G$ on $A$ and the continuous group operations in $A$.
+	But we can also check this directly: by homogeneity it suffices to show that
+	\[ g^{-1}(0)=\{ \sigma\in G_{C}\mid \sigma(a)-a=0 \text{ for }a\in \wp^{-1}(c) \} \]
+	is closed in $G_{C}$, which is true because its preimage under the quotient map is the closed subgroup $G(A/\wp^{-1}(c))$ of $G$.
+	Conversely, suppose $g\in \Hom(G_{C},\mu_{n})$ is a continuous homomorphism.
+	Then by our previous claim we may find some $i\in I$ such that $g=g_{i}\circ f_{i}$ for some $g_{i}\colon G_{C_{i}}\to \mu_{n}$, where $f_{i}\colon G_{C}\to G_{C_{i}}$ denotes the restriction.
+	This means that in the commutative square
+	\begin{center}
+	    \begin{tikzcd}
+		C_{i}/\wp(A_{K}) \arrow[hook]{d}\arrow{r}{\varphi_{2,i}} & \Hom(G_{C_{i}},\mu_{n})\arrow{d} \\
+		C/\wp(A_{K}) \arrow{r}{\varphi_{2}} & \Hom(G_{C},\mu_{n})
+	    \end{tikzcd}
+	\end{center}
+	our $g$ lies in the image of the right vertical arrow.
+	By \Cref{prop:finitecase} the top horizontal arrow is an isomorphism.
+	Hence $g$ also lies in the image of $\varphi_{2}$.
     \end{proof}
 \end{prop}
 
