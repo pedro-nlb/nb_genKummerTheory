@@ -107,6 +107,7 @@ We obtain in this manner a group homomorphism
 \[ G\to \Aut(\wp^{-1}(C)). \]
 The kernel of this group homomorphism is $G(A/\wp^{-1}(C))$ by definition.
 It is therefore a normal subgroup of $G$, which means in turn that $K(\wp^{-1}(C))/K$ is a Galois extension with Galois group $G_{C}\cong G/G(A/\wp^{-1}(C))$.
+In particular, we also obtain an induced action of the Galois group $G_{C}$ on $\wp^{-1}(C)$.
 
 We define now a pairing
 \begin{align*}
@@ -201,7 +202,36 @@ We factor then the previous pairing into the pairing that we are interested in:
     \[ C/\wp(A_{K})\cong \Hom_{\mathrm{cont}}(G_{C},\mu_{n}) \]
     onto the subgroup of continuous homomorphisms.
     \begin{proof}
-	Consider the directed system $\{ C_{i} \}_{i\in I}$ of all subgroups $C_{i}$ of $C$ containing $\wp(A_{K})$ and such that $(C:\wp(A_{K}))$ is finite.
+	Consider the directed system $\{ C_{i} \}_{i\in I}$ of all subgroups $C_{i}$ of $C$ containing $\wp(A_{K})$ and such that $(C_{i}:\wp(A_{K}))$ is finite.
+	Since any finite intermediate extension $K\subseteq L\subseteq K(\wp^{-1}(C))$ is contained in some $K(\wp^{-1}(C_{i}))$, we can write
+	\[ G_{C}\cong \varprojlim_{i\in I} G_{C_{i}}. \]
+	Consider now for each $i\in I$ the commutative diagram
+	\begin{center}
+	    \begin{tikzcd}
+		G_{C}\arrow[hook]{r}{\varphi_{1}}\arrow{d} & \Hom(C/\wp(A_{K}),\mu_{n})\arrow{d} \\
+		G_{C_{i}}\arrow{r}{\cong}[swap]{\varphi_{1,i}} & \Hom(C_{i}/\wp(A_{K}),\mu_{n})
+	    \end{tikzcd}
+	\end{center}
+	in which both horizontal arrows are the restrictions.
+	Let $f\in \Hom(C/\wp(A_{K}),\mu_{n})$ and consider for each $i\in I$ its restriction $f|_{C_{i}/\wp(A_{K})}$, which comes from a unique $\sigma_{i}\in G_{C_{i}}$.
+	This yields a family of automorphisms $(\sigma_{i})_{i\in I}$.
+	We claim that this is a compatible family, giving therefore an element in $G_{C}$ which maps to $f$ and proving surjectivity of $\varphi_{1}$.
+	To show this, let $i\leqslant j$ and consider the diagram
+	\begin{center}
+	    \begin{tikzcd}
+		G_{C_{j}}\arrow{d}\arrow{r}{\varphi_{1,j}} & \Hom(C_{j}/\wp(A_{K}),\mu_{n})\arrow{d} \\
+		G_{C_{i}}\arrow{r}{\varphi_{1,i}} & \Hom(C_{i}/\wp(A_{K}),\mu_{n})
+	    \end{tikzcd}
+	\end{center}
+	in which both vertical arrows are the restrictions.
+	We want to check that it commutes.
+	The isomorphism $G/G(A/\wp^{-1}(C_{k}))\to G_{C_{k}}$ is given by restriction of automorphisms for all $k\in I$.
+	So every $\tau\in G_{C_{j}}$ can be written as $\sigma|_{K(\wp^{-1}(C_{j}))}$ for some $\sigma\in G$.
+	For $c\in C_{i}\subseteq C_{j}$ and $a\in \wp^{-1}(c)$ we have then
+	\[ \varphi_{1,i}(\tau|_{K(\wp^{-1}(C_{i}))})(\bar{c})=\sigma(a)-a=\varphi_{1,j}(\tau)|_{C_{i}/\wp(A_{K})}(\bar{c}), \]
+	showing commutativity of the diagram and thus finishing the proof of bijectivity of $\varphi_{1}$.
+
+	Let us show next the assertion about $\varphi_{2}$.
     \end{proof}
 \end{prop}
 
