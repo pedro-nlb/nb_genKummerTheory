@@ -384,8 +384,20 @@ Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that
 	Then
 	\[ g(\sigma\circ \sigma')=g(\sigma)+g(\sigma')=g(\sigma)+\sigma(g(\sigma')), \]
 	the second equality being due to the fact that $g(\sigma')\in \mu_{n}\subseteq A_{K}$ and therefore $\sigma(g(\sigma'))=g(\sigma')$.
-	So $g$ is a $1$-cocycle representing a cohomology class in $H^{1}(\Gal(L/K),A_{L})$.
+	We are implicitly using here that the action of $G$ on $A$ induces a well-defined action of $\Gal(L/K)$ on $A_{L}$, and therefore on $\mu_{n}\subseteq A_{L}$.
+	Indeed, if $\tilde{\sigma}$ and $\tilde{\tilde{\sigma}}$ are extensions of a given $\sigma\in \Gal(L/K)$ to $K_{s}$, then $\tilde{\sigma}-\tilde{\tilde{\sigma}}$ is in the kernel of the restriction homomorphism, i.e.~is in $\Gal(K_{s}/L)$.
+	So if $a\in A_{L}$, then $\tilde{\sigma}(a)=\tilde{\tilde{\sigma}}(a)$.
+	From the equation above we see then that $g$ is a $1$-cocycle representing a cohomology class in $H^{1}(\Gal(L/K),A_{L})$.
 	\Cref{axiom} implies that $g$ is a $1$-coboundary, i.e.~there exists some $a\in A_{L}$ such that $g(\sigma)=a-\sigma(a)$ for all $\sigma\in \Gal(L/K)$.
+	Since the image of $g$ is in $\mu_{n}=\ker(\wp)$, we see that $\wp(a)=\wp(\tilde{\sigma}(a))=\tilde{\sigma}(\wp(a))$ for all $\tilde{\sigma} \in G$, i.e.~$\wp(a)\in A_{K}$.
+	But since $a\in A_{L}$, we also have $\wp(a)\in A_{K}$.
+	Thus $\wp(a)\in \wp(A_{L})\cap A_{K}=C$ and $a\in \wp^{-1}(C)$.
+	But then for all $\tau\in G(A/\wp^{-1}(C))$ we have $\tau(a)=a$, so that we may define a homomorphism
+	\begin{align*}
+	    f\colon G_{C} & \longrightarrow \mu_{n} \\
+	    \sigma & \longmapsto a-\sigma(a).
+	\end{align*}
+	This $f$ verifies $g=f\circ q$, showing surjectivity of $q^{*}$ as we wanted.
     \end{proof}
 \end{thm}
 
