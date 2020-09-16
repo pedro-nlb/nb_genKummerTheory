@@ -11,7 +11,7 @@
 
 \begin{document}
 
-\title{Short notes on Generalized Kummer Theory}
+\title{Short notes on General Kummer Theory}
 \maketitle
 
 \section{Preliminaries}
@@ -42,7 +42,7 @@ Continuity of the action of $G$ on $A$ ensures that for all $a\in A$ we have
 \end{center}
 Hence $G(A/a)$ is also closed in $G$ and corresponds to an intermediate field $K\subseteq K_{s}^{G(A/a)}\subseteq K_{s}$ \cite[4.2/3]{bos18}, let's denote it $K(a)$.
 
-\begin{lm}
+\begin{lm}\label{lm:intermediate}
     The intermediate field $K(a)$ is a finite extension of $K$.
     \begin{proof}
 	Let $\{ L_{i} \}_{i\in I}$ be the direct system of all subfields of $K_{s}$ which are finite field extensions of $K$.
@@ -264,6 +264,66 @@ We factor then the previous pairing into the pairing that we are interested in:
 	Hence $g$ also lies in the image of $\varphi_{2}$.
     \end{proof}
 \end{prop}
+
+\section{Main Theorem of Kummer Theory}
+
+Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that $\wp(A_{K})\subseteq C$ and $\{ C_{i} \}_{i\in I}$ is the directed system of all subgroups $C_{i}$ of $C$ containing $\wp(A_{K})$ such that $(C_{i}:\wp(A_{K}))$ is finite.
+
+\begin{lm}\label{lm:fieldwelldefined}
+    Then $K(\wp^{-1}(C))/K$ is an abelian extension with exponent $d$ dividing $n$.
+    \begin{proof}
+	This follows from injectivity of 
+	\[ \Gal(K(\wp^{-1}(C))/K)\to \Hom(C/\wp(A_{K}),\mu_{n}), \]
+	which was shown in \Cref{prop:injectivity}.
+    \end{proof}
+\end{lm}
+
+\begin{lm}\label{lm:groupwelldefined}
+    Let $L/K$ be a field extension with $L\subseteq K_{s}$.
+    Then $C:=\wp(A_{L})\cap A_{K}$ is a subgroup of $A_{K}$ with the property that $\wp(A_{K})\subseteq C$.
+    \begin{proof}
+	Since $A_{K}\subseteq A_{L}$, it follows that $\wp(A_{K})\subseteq \wp(A_{L})$.
+	It remains to show that $\wp(A_{K})\subseteq A_{K}$.
+	Let $a\in A_{K}$ and let $\sigma \in G$.
+	Then using $G$-equivariance of $\wp$ and the fact that $a\in A_{K}$ we have
+	\[ \sigma(\wp(a))=\wp(\sigma(a))=\wp(a), \]
+	hence $\wp(a)\in A_{K}$ as well.
+    \end{proof}
+\end{lm}
+
+\begin{lm}\label{lm:coefficients}
+    Let $L:=K(\wp^{-1}(C))$ and $L_{i}:=K(\wp^{-1}(C_{i}))$ for each $i\in I$.
+    Then
+    \[ A_{L}=\bigcup_{i\in I}A_{L_{i}}. \]
+    \begin{proof}
+	We show first the inclusion $\supseteq $.
+	Let $a\in A_{L_{i}}$ for some $i\in I$, i.e.~for all $\sigma\in G(A/\wp^{-1}(C_{i}))$ we have $\sigma(a)=a$.
+	Let then $\sigma\in G(A/\wp^{-1}(C))$, which is by definition the set of automorphisms $\tau\in G$ such that $\tau(b)=b$ for all $b\in \wp^{-1}(C)$.
+	Since $a\in \wp^{-1}(C_{i})\subseteq \wp^{-1}(C)$, we deduce that $\sigma(a)=a$.
+
+	We move on to the inclusion $\subseteq $.
+	Let $a\in A_{L}$, i.e.~$\sigma(a)=a$ for all $\sigma\in \Gal(K_{s}/L)=G(A/\wp^{-1}(C))$.
+	Consider the open subgroup $G(A/a)\subseteq G$.
+	The corresponding field $K(a)\subseteq K_{s}$ is finite over $K$, as we saw in \Cref{lm:intermediate}.
+	And since $\Gal(K_{s}/L)\subseteq G(A/a)$, we have $K(a)\subseteq L$.
+	Since $K(a)$ is finite over $K$ we may find some index $i\in I$ such that $K(a)\subseteq L_{i}$, hence
+	\[ a\in A_{K(a)}\subseteq A_{L_{i}}. \]
+    \end{proof}
+\end{lm}
+
+\begin{thm}
+    Viewing abelian extensions of $K$ as subfields of $K_{s}$, there is an inclusion-preserving bijection:
+    \begin{align*}
+	\{ C\trianglelefteq A_{K} \text{ s.t. } \wp(A_{K})\subseteq C \} & \leftrightarrow \{ L/K \text{ abelian w/ exponent dividing } n\}.
+    \end{align*}
+    Given $C\trianglelefteq A_{K}$ as above, the corresponding field extension is
+    \[ \Phi(C):=K(\wp^{-1}(C)); \]
+    and conversely, given $L/K$ as above, the corresponding subgroup is
+    \[ \Psi(L):=\wp(A_{L})\cap A_{K}. \]
+    \begin{proof}
+	We have seen that...
+    \end{proof}
+\end{thm}
 
 \newpage
 \bibliographystyle{alpha}
