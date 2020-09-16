@@ -321,7 +321,31 @@ Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that
     and conversely, given $L/K$ as above, the corresponding subgroup is
     \[ \Psi(L):=\wp(A_{L})\cap A_{K}. \]
     \begin{proof}
-	We have seen that...
+	The functions $\Phi$ and $\Psi$ are well-defined by \Cref{lm:fieldwelldefined} and \Cref{lm:groupwelldefined} respectively.
+
+	Let us check first that $\Psi\circ \Phi=\id$.
+	Let $C\subseteq A_{K}$ be a subgroup such that $\wp(A_{K})\subseteq C$ and let $L=K(\wp^{-1}(C))$.
+	We denote $\wp(A_{L})\cap A_{K}$ by $C'$, so that the goal is showing that $C'=C$.
+
+	We start with the inclusion $C\subseteq C'$.
+	The subgroup $A_{L}\subseteq A$ consists of all $a\in A$ which are fixed by the automorphisms in $\Gal(K_{s}/L)=G(A/\wp^{-1}(C))$, which in turn are precisely the automorphisms fixing all the elements in $\wp^{-1}(C)$.
+	Hence $\wp^{-1}(C)\subseteq A_{L}$ and therefore $C\subseteq \wp(A_{L})\cap A_{K}=C'$.
+
+	Moving on to the other inclusion $C'\subseteq C$, the first thing we claim is that $G(A/A_{L})=G(A/\wp^{-1}(C))$.
+	Indeed, from $\wp^{-1}(C)\subseteq A_{L}$ we immediately deduce $G(A/A_{L})\subseteq G(A/\wp^{-1}(C))$.
+	And conversely, if $\sigma\in G$ fixes every element in $\wp^{-1}(C)$, then it is an automorphism in $\Gal(K_{s}/L)$ by definition.
+	But every element $b\in A_{L}$ satisfies $\tau(b)=b$ for all $\tau\in \Gal(K_{s}/L)$, hence $\sigma$ fixes every element in $A_{L}$ as well.
+	Hence $G(A/A_{L})=G(A/\wp^{-1}(C))$.
+	In particular, $K(A_{L})=K(\wp^{-1}(C))=L$.
+	But we have seen already that $C\subseteq C'$, so $\wp^{-1}(C)\subseteq \wp^{-1}(C')$ and
+	\[ L=K(\wp^{-1}(C))\subseteq K(\wp^{-1}(C'))\subseteq K(A_{L})=L. \]
+	This implies that $K(\wp^{-1}(C))=K(\wp^{-1}(C'))$.
+	In particular, if we are in the situation of finite index, then we can apply \Cref{prop:finitecase} to conclude that $C=C'$.
+	Indeed, both field extensions have the same degrees, so both $C$ and $C'$ have the same index over $\wp(A_{K})$.
+	Equality follows then from the already proven inclusion $C\subseteq C'$.
+	This finishes the case in which $C$ has finite index over $\wp(A_{K})$.
+	The general case follows from this case thanks to \Cref{lm:coefficients}, because
+	\[ C'=\wp(A_{L})\cap A_{K}=\bigcup_{i\in I}\wp(A_{L_{i}})\cap A_{K}=\bigcup_{i\in I}C_{i}'=\bigcup_{i\in I}C_{i}=C. \]
     \end{proof}
 \end{thm}
 
