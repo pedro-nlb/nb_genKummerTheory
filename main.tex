@@ -45,7 +45,7 @@ Hence $G(A/a)$ is also closed in $G$ and corresponds to an intermediate field $K
 \begin{lm}\label{lm:intermediate}
     The intermediate field $K(a)$ is a finite extension of $K$.
     \begin{proof}
-	Let $\{ L_{i} \}_{i\in I}$ be the direct system of all subfields of $K_{s}$ which are finite field extensions of $K$.
+	Let $\{ L_{i} \}_{i\in I}$ be the directed system of all subfields of $K_{s}$ which are finite field extensions of $K$.
 	For each $i\in I$, let us denote by
 	\[ f_{i}\colon G\to \Gal(L_{i}/K) \]
 	the restriction morphism.
@@ -134,7 +134,7 @@ We factor then the previous pairing into the pairing that we are interested in:
 
 	Suppose that $\sigma\in G_{C}$ is such that $\langle \sigma,\bar{c}\rangle=0$ for all $\bar{c}\in C/\wp(A_{K})$.
 	In particular, if $\sigma'\in G$ is a preimage of $\sigma$, then $\sigma(a)=a$ for all $a\in \wp^{-1}(C)$.
-	This means precisely that $\sigma'\in G(A/\wp^{-1}(C))$, hence $\sigma=1_{G_{C}}$.
+	This means precisely that $\sigma'\in G(A/\wp^{-1}(C))$, hence $\sigma=\id_{K(\wp^{-1}(C))}$.
 
 	Suppose now that $c\in C$ is such that $\langle \sigma, \bar{c}\rangle=0$ for all $\sigma\in G_{C}$.
 	We want to show that $c\in \wp(A_{K})$, so let $a\in \wp^{-1}(c)$.
@@ -212,7 +212,7 @@ We factor then the previous pairing into the pairing that we are interested in:
 		G_{C_{i}}\arrow{r}{\cong}[swap]{\varphi_{1,i}} & \Hom(C_{i}/\wp(A_{K}),\mu_{n})
 	    \end{tikzcd}
 	\end{center}
-	in which both horizontal arrows are the restrictions.
+	in which both vertical arrows are the restrictions.
 	Let $f\in \Hom(C/\wp(A_{K}),\mu_{n})$ and consider for each $i\in I$ its restriction $f|_{C_{i}/\wp(A_{K})}$, which comes from a unique $\sigma_{i}\in G_{C_{i}}$.
 	This yields a family of automorphisms $(\sigma_{i})_{i\in I}$.
 	We claim that this is a compatible family, giving therefore an element in $G_{C}$ which maps to $f$ and proving surjectivity of $\varphi_{1}$.
@@ -270,7 +270,7 @@ We factor then the previous pairing into the pairing that we are interested in:
 Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that $\wp(A_{K})\subseteq C$ and $\{ C_{i} \}_{i\in I}$ is the directed system of all subgroups $C_{i}$ of $C$ containing $\wp(A_{K})$ such that $(C_{i}:\wp(A_{K}))$ is finite.
 
 \begin{lm}\label{lm:fieldwelldefined}
-    Then $K(\wp^{-1}(C))/K$ is an abelian extension with exponent $d$ dividing $n$.
+    $K(\wp^{-1}(C))/K$ is an abelian extension with exponent $d$ dividing $n$.
     \begin{proof}
 	This follows from injectivity of 
 	\[ \Gal(K(\wp^{-1}(C))/K)\to \Hom(C/\wp(A_{K}),\mu_{n}), \]
@@ -350,8 +350,12 @@ Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that
 	Let $L/K$ be an abelian extension with exponent $d$ dividing $n$.
 	Let $C:=\wp(A_{L})\cap A_{K}$.
 	Then $\wp^{-1}(C)\subseteq A_{L}$.
-	Indeed, if $\wp(a)=\wp(b)\in A_{K}$ with $b\in A_{L}$ and $\sigma\in \Gal(K_{s}/L)$, then
-	\[ \sigma(\wp(a))=\sigma(\wp(b))=\wp(\sigma(b))=\wp(b)=\wp(a). \]
+	Indeed, if $\wp(a)=\wp(b)\in A_{K}$ with $b\in A_{L}$ and $\sigma\in \Gal(K_{s}/L)\subseteq G$, then $\sigma(a)-b\in \mu_{n}=\ker(\wp)$, because
+	\[ \wp(\sigma(a))=\sigma(\wp(a))=\wp(a)=\wp(b). \]
+	But $b\in A_{L}$ implies that $\sigma(b)=b$, hence $\sigma(a-b)\in \mu_{n}\subseteq A_{K}$.
+	In particular, since $\sigma^{-1}\in G$, we have
+	\[ a-b=\sigma^{-1}(\sigma(a-b))=\sigma(a-b)=\sigma(a)-b, \]
+	thus $\sigma(a)=a$ and $a\in A_{L}$, showing the desired inclusion.
 	Therefore $\wp^{-1}(C)$ is fixed by $\Gal(K_{s}/L)$, i.e.~$G(A/\wp^{-1}(C))\supseteq \Gal(K_{s}/L)$.
 	Hence $K(\wp^{-1}(C))\subseteq L$, and we need to show that this inclusion is an equality.
 	
@@ -390,7 +394,7 @@ Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that
 	From the equation above we see then that $g$ is a $1$-cocycle representing a cohomology class in $H^{1}(\Gal(L/K),A_{L})$.
 	\Cref{axiom} implies that $g$ is a $1$-coboundary, i.e.~there exists some $a\in A_{L}$ such that $g(\sigma)=a-\sigma(a)$ for all $\sigma\in \Gal(L/K)$.
 	Since the image of $g$ is in $\mu_{n}=\ker(\wp)$, we see that $\wp(a)=\wp(\tilde{\sigma}(a))=\tilde{\sigma}(\wp(a))$ for all $\tilde{\sigma} \in G$, i.e.~$\wp(a)\in A_{K}$.
-	But since $a\in A_{L}$, we also have $\wp(a)\in A_{K}$.
+	But since $a\in A_{L}$, we also have $\wp(a)\in \wp(A_{L})$.
 	Thus $\wp(a)\in \wp(A_{L})\cap A_{K}=C$ and $a\in \wp^{-1}(C)$.
 	But then for all $\tau\in G(A/\wp^{-1}(C))$ we have $\tau(a)=a$, so that we may define a homomorphism
 	\begin{align*}
@@ -401,7 +405,6 @@ Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that
     \end{proof}
 \end{thm}
 
-\newpage
 \bibliographystyle{alpha}
 \bibliography{main}
 \vfill
