@@ -409,8 +409,8 @@ Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that
 
 \section{Example: degree $p$ extension of $\bbF_{p}$}
 
-Let us skip the necessary checks now and go straigth to the application of the theorem for $\bbF_{p}$ and exponent $p$.
-Let's fix an algebraic closure $\overline{\bbF}_{p}$ and take $A:=\overline{\bbF}_{p}$ and
+Let us omit checking the necessary hypotheses and go straigth to the application of the theorem for $\bbF_{p}$ and exponent $p$.
+Fix an algebraic closure $\overline{\bbF}_{p}$ and take $A:=\overline{\bbF}_{p}$ and
 \begin{align*}
     \wp\colon \overline{\bbF}_{p} & \longrightarrow \overline{\bbF}_{p} \\
     a & \longmapsto a^{p}-a.
@@ -421,7 +421,16 @@ From Artin--Schreier theory we know that all such extensions are given by roots 
 so choosing different $c\in \{ 1,\ldots,p-1\}\subseteq \bbF_{p}$ should yield the same field.
 Let us check that this is indeed the case.
 
-Let $\alpha\in \overline{\bbF}_{p}$ be a root of $t^{p}-t-1$.
+Let $\alpha\in \overline{\bbF}_{p}$ be a root of $t^{p}-t-1$ and let $L\subseteq \overline{\bbF}_{p}$ be the field extension given by the irreducible polynomial $t^{p}-t-c$ for some $c\in \{2,\ldots,p-1\}\subseteq \bbF_{p}$.
+We claim that $L\subseteq \bbF_{p}[\alpha]$, which implies that both fields are equal because they both have degree $p$ over $\bbF_{p}$.
+To see this, it suffices to show that $t^{p}-t-c$ has a root in $\bbF_{p}[\alpha]$.
+By definition, $\alpha$ satisfies $\alpha^{p}-\alpha=1\in \bbF_{p}[\alpha]$.
+And since $c\in \bbF_{p}$, we have $c^{p}=c\in \bbF_{p}[\alpha]$.
+Therefore, setting $\beta:=c\alpha\in \bbF_{p}[\alpha]$, we see that
+\[ \beta^{p}-\beta-c=c^{p}\alpha^{p}-c\alpha-c=c(\alpha^{p}-\alpha)-c=0, \]
+so that $\beta$ is a root of $t^{p}-t-c$ in $\bbF_{p}[\alpha]$ and $L=\bbF_{p}[\alpha]$.
+
+
 
 \bibliographystyle{alpha}
 \bibliography{main}
