@@ -14,6 +14,8 @@
 \title{Short notes on General Kummer Theory}
 \maketitle
 
+\tableofcontents
+
 \section{Preliminaries}
 
 \subsection*{Goal:} given a field $K$ and a non-zero natural number $n$, characterize all Galois extensions of $K$ whose Galois group is abelian with exponent $d\mid n$.
@@ -311,7 +313,7 @@ Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that
     \end{proof}
 \end{lm}
 
-\begin{thm}
+\begin{thm}\label{thm:kummer}
     Viewing abelian extensions of $K$ as subfields of $K_{s}$, there is an inclusion-preserving bijection:
     \begin{align*}
 	\{ C\trianglelefteq A_{K} \text{ s.t. } \wp(A_{K})\subseteq C \} & \leftrightarrow \{ L/K \text{ abelian w/ exponent dividing } n\}.
@@ -404,6 +406,22 @@ Recall from the previous section that $C\subseteq A_{K}$ is a subgroup such that
 	This $f$ verifies $g=f\circ q$, showing surjectivity of $q^{*}$ as we wanted.
     \end{proof}
 \end{thm}
+
+\section{Example: degree $p$ extension of $\bbF_{p}$}
+
+Let us skip the necessary checks now and go straigth to the application of the theorem for $\bbF_{p}$ and exponent $p$.
+Let's fix an algebraic closure $\overline{\bbF}_{p}$ and take $A:=\overline{\bbF}_{p}$ and
+\begin{align*}
+    \wp\colon \overline{\bbF}_{p} & \longrightarrow \overline{\bbF}_{p} \\
+    a & \longmapsto a^{p}-a.
+\end{align*}
+We have then $\mu_{p}=\bbF_{p}=A_{\bbF_{p}}$ and $\wp(A_{\bbF_{p}})=0$, so according to \Cref{thm:kummer}, there should be a single degree $p$ extension of $\bbF_{p}$ inside $\overline{\bbF}_{p}$, corresponding to the subgroup $\bbF_{p}\trianglelefteq \bbF_{p}$.
+From Artin--Schreier theory we know that all such extensions are given by roots of polynomials of the form
+\[ t^{p}-t-c \in \bbF_{p}[t], \]
+so choosing different $c\in \{ 1,\ldots,p-1\}\subseteq \bbF_{p}$ should yield the same field.
+Let us check that this is indeed the case.
+
+Let $\alpha\in \overline{\bbF}_{p}$ be a root of $t^{p}-t-1$.
 
 \bibliographystyle{alpha}
 \bibliography{main}
